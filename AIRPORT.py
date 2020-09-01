@@ -1,4 +1,5 @@
 import discord
+import os
 from datetime import datetime, timedelta
 from riotwatcher import LolWatcher
 
@@ -85,5 +86,5 @@ async def on_message(message):
         res = lolspect(LMJ)
         await message.channel.send(res)
 
-
-client.run("NzQ5MzE4MDkyOTk1Mjk3Mzgw.X0qO2w.tNLPEcuUA6tIknd0ouqmsS_3v_w")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)

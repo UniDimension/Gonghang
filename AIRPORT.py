@@ -41,7 +41,7 @@ async def on_message(message):
         await message.channel.send("너 삘 받았어? 삘 받았잖아")
 
     if message.content.startswith("/도움말"):
-        await message.channel.send("명령어 목록 : /안녕, /잘가, /최강원딜강원, /최강로리민준, /투표, /옵")
+        await message.channel.send("명령어 목록 : /안녕, /잘가, /투표, /자기소개, /채널메시지, /DM, ... 이외의 재밌는 요소들")
 
     if message.content.startswith("/엄준식"):
         await message.channel.send(" 니.. 니가 언제부터 준식이를 매입했는데 스바 그지시키야~!")

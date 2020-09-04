@@ -1,24 +1,10 @@
 import discord
 import os
 from datetime import datetime, timedelta
-from riotwatcher import LolWatcher
+
 
 client = discord.Client()
-lol_watcher = LolWatcher('RGAPI-415691a1-8c13-4106-847f-cee7089f5062')
-my_region = 'kr'
-OKS = lol_watcher.summoner.by_name(my_region, '오크스')
-LMJ = lol_watcher.summoner.by_name(my_region, '응 안할꺼야 수고')
-spectator = None
 
-
-def lolspect(me):
-    try:
-        spectator = lol_watcher.spectator.by_summoner(my_region, me['id'])
-        start_time = datetime.fromtimestamp(spectator['gameStartTime'] / 1000)
-        if datetime.now() - start_time < timedelta(hours=1):
-            return "너 롤하잖아. Feel 받았잖아"
-    except:
-        return "니가 언제부터 유유자적을 매입했냐 스바시키야~! "
 
 
 @client.event
@@ -78,13 +64,7 @@ async def on_message(message):
             choose = await message.channel.send("```" + vote[i] + "```")
             await choose.add_reaction('👍')
 
-    if message.content.startswith("/최강원딜강원"):
-        res = lolspect(OKS)
-        await message.channel.send(res)
-
-    if message.content.startswith("/최강로리민준"):
-        res = lolspect(LMJ)
-        await message.channel.send(res)
+    
 
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)

@@ -34,6 +34,21 @@ async def on_message(message):
 
     if message.content.startswith("/옵"):
         await message.channel.send("https://www.op.gg")
+    
+    if message.content.startswith("/뿅"):
+        await message.channel.send(file=discord.File("뿅.png"))
+
+    if message.content.startswith("/ㅅㅂ"):
+        await message.channel.send(file=discord.File("ㅅㅂ.png"))
+
+    if message.content.startswith("/삼위일체"):
+        await message.channel.send(file=discord.File("삼위일체.png"))
+
+    if message.content.startswith("/ㄱㅎ"):
+        await message.channel.send(file=discord.File("같행.png"))
+
+    if message.content.startswith("/빠다"):
+        await message.channel.send(file=discord.File("나비.png"))
 
     if message.content.startswith("/자기소개"):
         embed = discord.Embed(title="공항도둑", description="뭘 꼬라봐 스바시키야~!", color=0x00ff56)
